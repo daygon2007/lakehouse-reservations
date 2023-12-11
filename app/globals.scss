@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply text-white;
+}
+
+.wrapper {
+  @apply container mx-auto;
+}
+
+button {
+  @apply bg-blue text-black px-[5px] py-[8px] transition ease-in-out duration-200 rounded font-bold text-xl;
+
+  &:hover {
+    @apply bg-yellow;
+  }
+
+  &.logout {
+    @apply bg-red;
+  }
+}
+
+.react-calendar {
+  @apply mt-[24px];
+  width: 100% !important;
+
+  .react-calendar__viewContainer {
+    button {
+      @apply py-[2rem];
+      font-size: 24px;
+    }
+  }
+}
