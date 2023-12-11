@@ -14,6 +14,7 @@ import Link from "next/link";
 import LoggedOut from "@/components/LoggedOut";
 import { signOut } from "@/auth";
 import Nav from "@/components/Nav";
+import Head from "next/head";
 
 export default function Reservations() {
   const [userReservations, setUserReservations] = useState([]);
@@ -72,6 +73,11 @@ export default function Reservations() {
   };
   return (
     <>
+      <Head>
+        <meta name="google" content="notranslate" />
+        <meta name="googlebot" content="noindex, nofollow" />
+        <meta name="bingbot" content="noindex, nofollow" />
+      </Head>
       {user && (
         <div className="wrapper prose dark:prose-invert">
           <Nav />

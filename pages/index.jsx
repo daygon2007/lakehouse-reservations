@@ -7,6 +7,7 @@ import LoggedOut from "@/components/LoggedOut";
 import LoggedIn from "@/components/LoggedIn";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import Head from "next/head";
 
 export default function Home() {
   const [user, setUser] = useState(null);
@@ -27,11 +28,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="wrapper prose dark:prose-invert">
-      {user && <Nav />}
-      <h1 className="text-center">Lake House Reservations</h1>
-      {user ? <LoggedIn user={user} /> : <LoggedOut />}
-      {/* Your app content goes here */}
-    </div>
+    <>
+      <Head>
+        <meta name="google" content="notranslate" />
+        <meta name="googlebot" content="noindex, nofollow" />
+        <meta name="bingbot" content="noindex, nofollow" />
+      </Head>
+      <div className="wrapper prose dark:prose-invert">
+        {user && <Nav />}
+        <h1 className="text-center">Lake House Reservations</h1>
+        {user ? <LoggedIn user={user} /> : <LoggedOut />}
+        {/* Your app content goes here */}
+      </div>
+    </>
   );
 }
