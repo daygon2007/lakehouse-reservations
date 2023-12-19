@@ -67,7 +67,7 @@ const BookingModal = ({
               Booking Details
             </Dialog.Title>
             <Dialog.Description className="text-black">
-              <form action={handleReservation} netlify>
+              <form netlify>
                 <div className="mb-[12px]">
                   <label>Requestor:</label>{" "}
                   <input
