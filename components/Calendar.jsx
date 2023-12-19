@@ -21,14 +21,13 @@ const MyCalendar = ({ onDateSelection, refresh }) => {
       const scheduleData = [];
       querySnapshot.forEach((doc) => {
         const data = doc.data();
-        console.log(data);
         setGuests(data?.guests);
         setRequestor(data?.requestor);
         scheduleData.push({
           startDate: new Date(data.startDate),
           endDate: new Date(data.endDate),
           guests: data.guests,
-          requestor: data.requestor,
+          requestor: data.requestorName || data.requestor,
         });
       });
 
@@ -65,7 +64,7 @@ const MyCalendar = ({ onDateSelection, refresh }) => {
     // Customize content based on date status
     if (matchingSchedule) {
       return (
-        <div className="scheduled-day text-sm mt-[18px]">
+        <div className="scheduled-day text-xs mt-[18px]">
           Reserved by: {matchingSchedule.requestor}
           <br />
           Number of Guests: {matchingSchedule.guests}

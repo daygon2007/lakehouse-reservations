@@ -21,7 +21,6 @@ export default function Reservations() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    console.log(user);
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         // User is signed in
